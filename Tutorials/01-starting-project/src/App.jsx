@@ -29,12 +29,13 @@ function Header() {
     );
 }
 
-function CoreConcept(props) {
+// This example uses OBJECT DESTRUCTURING for importing object variables
+function CoreConcept({ image, title, description }) {
     return (
         <li>
-            <img src={props.image} alt="..." />
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
+            <img src={image} alt="..." />
+            <h3>{title}</h3>
+            <p>{description}</p>
         </li>
     );
 }
@@ -52,9 +53,11 @@ function App() {
                             description={CORE_CONCEPTS[0].description}
                             image={CORE_CONCEPTS[0].image}
                         />
-                        // will work if naems are similar
-                        <CoreConcept {...CORE_CONCEPTS[1]} 
-                        />
+                        {/* 
+                        This will work if naems are similar - this will work
+                        if the object names equate to prop values.
+                        */}
+                        <CoreConcept {...CORE_CONCEPTS[1]} />
                         <CoreConcept
                             title={CORE_CONCEPTS[2].title}
                             description={CORE_CONCEPTS[3].description}
