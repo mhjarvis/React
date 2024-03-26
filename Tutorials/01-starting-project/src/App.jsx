@@ -1,18 +1,7 @@
 // This imports a image file into the javascript file - a better approach to getting images in
 import { CORE_CONCEPTS } from "./data";
 import Header from './components/Header.jsx'
-
-
-// This example uses OBJECT DESTRUCTURING for importing object variables
-function CoreConcept({ image, title, description }) {
-    return (
-        <li>
-            <img src={image} alt="..." />
-            <h3>{title}</h3>
-            <p>{description}</p>
-        </li>
-    );
-}
+import CoreConcept from "./components/CoreConcepts.jsx";
 
 function App() {
     return (
