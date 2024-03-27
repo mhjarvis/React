@@ -2,6 +2,7 @@
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
+import TabButton from "./components/Header/TabButton.jsx";
 
 function App() {
     return (
@@ -33,7 +34,12 @@ function App() {
                         />
                     </ul>
                 </section>
-                <h2>Time to get started!</h2>
+                <section id="examples">
+                    <h2>Time to get started!</h2>
+                    <menu>
+                        <TabButton>Components</TabButton>
+                    </menu>
+                </section>
             </main>
         </div>
     );
