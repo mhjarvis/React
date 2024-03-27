@@ -1,6 +1,6 @@
 // This imports a image file into the javascript file - a better approach to getting images in
 import { CORE_CONCEPTS } from "./data";
-import Header from './components/Header.jsx'
+import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
 
 function App() {
