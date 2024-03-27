@@ -75,9 +75,61 @@ An alternative method:
 
 ### The `children` Prop
 
+The `children` prop is the only prop which you can't destructure and call something else.
+
     <TabButton>Component</TabButton>                // this is not output by default
                                                     // use this with props.children
 
     export default function TabButton(props) {
         return <h2>{props.children}</h2>            // h2 with content 'Component'
     }
+
+### Reacting to Events
+
+    export default function TabButton({children}) {
+        function handleClick() {    // function that executes onClick
+
+        }
+
+        return (
+            <button onClick={handleClick}>{children}</button>   // onClick takes a function
+        );
+    }
+
+### Passing Functions as Values to Props
+
+In the parent component, we can have a function that we pass as a prop to the child component, which then is called based on the event it is attached to.
+
+    function handleSelect() { // do something }
+    <TabButton onSelect={handleSelect}>Components</TabButton>       // create button with onSelect
+
+In the child component, we accep that function and attach it to the `onClick` handler.
+
+    export default function TabButton({ children, onSelect }) {
+        return (
+            <li>
+                <button onClick={onSelect}>{children}</button>
+            </li>
+        );
+    }
+
+### Passing Custom Arguments to Event Functions
+
+Using the previous syntax, we can pass values to those functions. These will not execute, since the only thing being passes is the anonymous function.
+
+    // create a function to be called by the component
+
+    function handleSelect(selectedButton) {
+        console.log(selectedButton)
+    }
+
+    // onSelect is the prop that is passed down to the component; when that component executes, it will
+    // call the handSelect function with whatever variable in it.
+
+    <TabButton onSelect={() => handleSelect('someValue')}>Components</TabButton>
+    <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+
+    // or you can use the longer version...
+
+    <TabButton onSelect={function() { handleSelect }}>Components</TabButton>    // longer version
+
