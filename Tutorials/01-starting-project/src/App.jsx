@@ -4,9 +4,10 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
 import TabButton from "./components/Header/TabButton.jsx";
 import { useState } from "react";
+import { EXAMPLES } from "./data.js";
 
 function App() {
-    const [selectedTopic, setSelectedTopic] = useState("Click a button");
+    const [selectedTopic, setSelectedTopic] = useState();
 
     function handleSelect(selectedButton) {
         setSelectedTopic(selectedButton);
@@ -57,11 +58,21 @@ function App() {
                             State
                         </TabButton>
                     </menu>
-                    {selectedTopic}
+                    {!selectedTopic ? <p>Please select a topic.</p> : null}
+
+                    {selectedTopic ? (
+                        <div id="tab-content">
+                            <h3>{EXAMPLES[selectedTopic].title}</h3>
+                            <p>{EXAMPLES[selectedTopic].description}</p>
+                            <pre>
+                                <code>{EXAMPLES[selectedTopic].code}</code>
+                            </pre>
+                        </div>
+                    ) : null}
+
                 </section>
             </main>
         </div>
     );
 }
-
 export default App;
