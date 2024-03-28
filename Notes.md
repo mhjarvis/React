@@ -134,3 +134,11 @@ Using the previous syntax, we can pass values to those functions. These will not
     <TabButton onSelect={function() { handleSelect }}>Components</TabButton>    // longer version
 
 ### Managing `state` and Using Hooks
+
+-   Only call hooks inside of Component Functions.
+-   Only call hooks on the top level.
+
+    function App() {
+    const [val, setVal] = useState('Text or whatever for the initial value');
+    }
+
