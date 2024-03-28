@@ -133,3 +133,4 @@ Using the previous syntax, we can pass values to those functions. These will not
 
     <TabButton onSelect={function() { handleSelect }}>Components</TabButton>    // longer version
 
+### Managing `state` and Using Hooks
