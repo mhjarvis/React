@@ -233,3 +233,14 @@ Another example...
         return <li>{props.text}</li>;
     }
 
+## React Essentials - Deep Dive
+
+## Fragments
+
+    import Fragment from 'react';       // older project syntax
+    <Fragment></Fragment>
+
+    // or, for newer projects, you can just write fragments like this...
+
+    <> </>      // can be used and will not show in DOM
+
