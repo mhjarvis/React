@@ -3,10 +3,13 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
 import TabButton from "./components/Header/TabButton.jsx";
+import { useState } from "react";
 
 function App() {
+    const [selectedTopic, setSelectedTopic] = useState("Click a button");
+
     function handleSelect(selectedButton) {
-        console.log(selectedButton);
+        setSelectedTopic(selectedButton);
     }
 
     return (
@@ -54,6 +57,7 @@ function App() {
                             State
                         </TabButton>
                     </menu>
+                    {selectedTopic}
                 </section>
             </main>
         </div>
