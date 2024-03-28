@@ -142,3 +142,42 @@ Using the previous syntax, we can pass values to those functions. These will not
     const [val, setVal] = useState('Text or whatever for the initial value');
     }
 
+### Rendering Content Conditionally
+
+    const [selectedTopic, setSelectedTopic] = useState();
+
+    // Component code
+
+    {!selectedTopic ? <p>Please select a topic.</p> : null}
+
+    {selectedTopic ? (
+        <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+        </div>
+    ) : null}
+
+Or, we can use a trick in JavaScript...
+
+    {!selectedTopic && <p>Please select a topic.</p>}
+    {selectedTopic && <div>...code...</div>}
+
+Or, we can use a variable...
+
+    let tabContent = <p>Please select a topic.</p>
+
+    if (selectedTopic) {
+        tabContent = <div id="tab-content">
+                        <h3>{EXAMPLES[selectedTopic].title}</h3>
+                        <p>{EXAMPLES[selectedTopic].description}</p>
+                        <pre>
+                            <code>{EXAMPLES[selectedTopic].code}</code>
+                        </pre>
+                    </div>
+    }
+
+    ...code...
+    {tabContent}
