@@ -20,41 +20,36 @@ function App() {
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <CoreConcept
-                            title={CORE_CONCEPTS[0].title}
-                            description={CORE_CONCEPTS[0].description}
-                            image={CORE_CONCEPTS[0].image}
-                        />
-                        {/* 
-                        This will work if naems are similar - this will work
-                        if the object names equate to prop values.
-                        */}
-                        <CoreConcept {...CORE_CONCEPTS[1]} />
-                        <CoreConcept
-                            title={CORE_CONCEPTS[2].title}
-                            description={CORE_CONCEPTS[3].description}
-                            image={CORE_CONCEPTS[2].image}
-                        />{" "}
-                        <CoreConcept
-                            title={CORE_CONCEPTS[3].title}
-                            description={CORE_CONCEPTS[3].description}
-                            image={CORE_CONCEPTS[3].image}
-                        />
+                        {CORE_CONCEPTS.map((conceptItem) => (
+                            <CoreConcept key={conceptItem.title} {...conceptItem} />
+                        ))}
                     </ul>
                 </section>
                 <section id="examples">
                     <h2>Time to get started!</h2>
                     <menu>
-                        <TabButton onSelect={() => handleSelect("components")}>
+                        <TabButton
+                            isSelected={selectedTopic === "components"}
+                            onSelect={() => handleSelect("components")}
+                        >
                             Components
                         </TabButton>
-                        <TabButton onSelect={() => handleSelect("jsx")}>
+                        <TabButton
+                            isSelected={selectedTopic === "jsx"}
+                            onSelect={() => handleSelect("jsx")}
+                        >
                             JSX
                         </TabButton>
-                        <TabButton onSelect={() => handleSelect("props")}>
+                        <TabButton
+                            isSelected={selectedTopic === "props"}
+                            onSelect={() => handleSelect("props")}
+                        >
                             Props
                         </TabButton>
-                        <TabButton onSelect={() => handleSelect("state")}>
+                        <TabButton
+                            isSelected={selectedTopic === "state"}
+                            onSelect={() => handleSelect("state")}
+                        >
                             State
                         </TabButton>
                     </menu>
@@ -69,7 +64,6 @@ function App() {
                             </pre>
                         </div>
                     ) : null}
-
                 </section>
             </main>
         </div>

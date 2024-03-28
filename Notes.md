@@ -181,3 +181,55 @@ Or, we can use a variable...
 
     ...code...
     {tabContent}
+
+### CSS Styling and Dynamic Styling
+
+    <TabButton
+        isSelected={selectedTopic === "components"}     // set prop value
+        onSelect={() => handleSelect("components")}
+    >
+
+    // in the TabButton component...
+
+    <button className={isSelected ? 'active' : ''} onClick={onSelect}>{children}</button>
+
+    // where active is the css class to highlight content
+
+### Outputting List Data Dynamically
+
+This can help prevent apps breaking if some data is removed. This is achieved using the .map() method...
+
+    <CoreConcept
+        title={CORE_CONCEPTS[0].title}
+        description={CORE_CONCEPTS[0].description}
+        image={CORE_CONCEPTS[0].image}
+    />
+
+    // or this...
+
+    <CoreConcept {...CORE_CONCEPTS[1]} />
+
+    // will instead be written as...
+
+    {CORE_CONCEPTS.map((conceptItem) => <CoreConcept {...conceptItem} />)}
+
+Another example...
+
+    export const DUMMY_TODOS = [        // this is the array which will
+        'Learn React',                  // be mapped over
+        'Practice React',
+        'Profit!'
+    ];
+
+    export default function App() {
+        return (
+            <ul>
+                {DUMMY_TODOS.map((item) => (<Todo text={item}></Todo>))}
+            </ul>
+            )
+    }
+
+    export default function Todo(props) {
+        return <li>{props.text}</li>;
+    }
+
