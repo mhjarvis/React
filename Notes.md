@@ -135,6 +135,7 @@ Using the previous syntax, we can pass values to those functions. These will not
 
 ### Managing `state` and Using Hooks
 
+-   `state` will update the entire component to which it belongs in the event that it changes.
 -   Only call hooks inside of Component Functions.
 -   Only call hooks on the top level.
 
@@ -244,3 +245,4 @@ Another example...
 
     <> </>      // can be used and will not show in DOM
 
+## 
