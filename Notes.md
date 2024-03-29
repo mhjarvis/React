@@ -260,3 +260,53 @@ Note that props (such as `id` or `className`) are not automatically forwarded to
 
 
 Here, the ...props allows us to merge all other values into an object ('props'). Then, using the ...props in the 'section' element, all remaining props are then applied to this 'section' element.
+
+### Working With Multiple JSX Slots
+You can pass content as a prop to other components. Wrap them...
+
+    <Tabs
+        buttons={
+            <>
+                <TabButton
+                    isSelected={selectedTopic === "components"}
+                    onClick={() => handleSelect("components")}
+                >
+                Components
+                </TabButton>
+                <TabButton
+                    isSelected={selectedTopic === "jsx"}
+                    onClick={() => handleSelect("jsx")}
+
+        // more code
+
+            </>
+        }>
+    </Tabs>
+
+### Setting Component Types Dynamically
+You can set coponent types (e.g. <menu>, <div>, etc.) dynamically.
+
+    // code...
+
+    ButtonsContainer="menu"
+    // or as a custom component:
+    // ButtonsContainer={Section}
+
+    export default function Tabs({ children, buttons, ButtonsContainer }) {
+
+        // const ButtonContainer = buttonsContainer; - this can also be used if remaping
+        
+        return (
+        <>
+            <ButtonsContainer>{buttons}</ButtonsContainer>
+            {children}
+        </>
+    );
+}
+
+### Setting Default Prop Values
+
+Default `prop` values can also be set...
+
+    export default function SomeComponent(someVar, ButtonContainer = 'menu') {}
+
