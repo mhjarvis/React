@@ -250,12 +250,13 @@ Another example...
 Note that props (such as `id` or `className`) are not automatically forwarded to inner elements. For example...
 
     export default function Section({ title, children, ...props }) {
-    return (
-        <section id={id}>
-            <h2>{title}</h2>
-            {children}
-        </section>
+        return (
+            <section {...props}>
+                <h2>{title}</h2>
+                {children}
+            </section>
         );
     }
 
-Here, the ...props tells JavaScript to merge all other values that are passed into a variable (in this case props), but can be named whatever you like.
+
+Here, the ...props allows us to merge all other values into an object ('props'). Then, using the ...props in the 'section' element, all remaining props are then applied to this 'section' element.
