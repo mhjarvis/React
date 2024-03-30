@@ -310,3 +310,20 @@ Default `prop` values can also be set...
 
     export default function SomeComponent(someVar, ButtonContainer = 'menu') {}
 
+
+### User Input & Two-Way-Binding
+
+    export default function Player({ initialName, symbol }) {
+        const [playerName, setPlayerName] = useState(initialName);
+
+        function handleChange(event) {
+            setPlayerName(event.target.value);
+        }
+
+        let editablePlayerName = <span className="player-name">{playerName}</span>;
+
+        if (isEditing) {
+            editablePlayerName = (
+                <input type="text" required value={playerName} onChange={handleChange} />
+            );
+    }
