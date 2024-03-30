@@ -1,6 +1,8 @@
 <h1 style='text-align:center'> React Best Practices</h1>
 
-## 1. Update State Based on the Old State Correctly
+## 1. 
+
+## 2. Update State Based on the Old State Correctly
 
 To ensure that state gets updated correctly, calling state update function should be performed with a function:
 
