@@ -23,4 +23,16 @@ The reason we need to set the value this way has to do with what is passed to th
         setValue(!value);   // value is false at time of call, so it will be set to true
     }
 
-## 2. 
+## 2. Updating Object State Immutably
+
+When updating a object or an array, becuase they are reference values, you want to update a copy of the array or object in the state-update function to avoid any issues. 
+
+    const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+    function handleSelectSquare(rowIndex, colIndex, ) {
+        setGameBoard((prevGameBoard) => {
+            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
+            updatedBoard[rowIndex][colIndex] = 'X';
+            return updatedBoard;
+        });
+    }
