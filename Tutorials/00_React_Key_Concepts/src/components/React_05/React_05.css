@@ -17,3 +17,9 @@
     height: 2rem;
     width: 200px;
 }
+
+.error-message {
+    color: red;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
