@@ -23,3 +23,11 @@
     font-weight: 700;
     font-size: 0.7rem;
 }
+
+.product-item {
+    display: flex;
+    width: 300px;
+    margin-left: 20%;
+    padding: 0.5rem 2rem;
+    border: 1px solid black;
+}
