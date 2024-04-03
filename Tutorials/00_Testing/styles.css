@@ -1,0 +1,8 @@
+* {
+    margin: 1rem;
+    list-style-type: none;
+}
+
+.bold {
+    font-weight: 900;
+}
