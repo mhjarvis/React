@@ -1,4 +1,5 @@
-import { questions } from "./questions";
+import { questions } from "./react_01_questions";
+import './React_01.css';
 import Title from "../Title";
 
 export default function React_01() {
