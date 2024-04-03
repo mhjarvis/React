@@ -3,7 +3,7 @@ import "./React_02.css";
 import { questions_02 } from "./react_02_questions";
 import TestYourKnowledge from "../TestYourKnowledge";
 import Activity_2_1 from "./Activity_2_1";
-import Activity_2_2 from "./Actibity_2_2";
+import Activity_2_2 from "./Activity_2_2";
 
 export default function React_02() {
     return (
