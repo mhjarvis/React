@@ -5,7 +5,7 @@ import TestYourKnowledge from "../TestYourKnowledge";
 
 export default function React_02() {
     return (
-        <div>
+        <div className="sect">
             <Title>3. Components and Props</Title>
             <TestYourKnowledge questions={questions_03} />
         </div>

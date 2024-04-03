@@ -3,7 +3,7 @@
 
 export default function Activity_2_2() {
     return (
-        <div className="activity_2_2">
+        <div className="activity">
             <h2>
                 Activity 2.2: Creating a React App to Log Your Goals for This
                 Book
