@@ -1,4 +1,4 @@
-const questions = [
+const questions_01 = [
     [
         "1. What is React?",
         "React is a JavaScript library that simplifies building user interfaces and allows you to create highly interactive and reactive web user interfaces. It can be used with many platforms.",
@@ -21,4 +21,4 @@ const questions = [
     ],
 ];
 
-export { questions }
+export { questions_01 }
