@@ -46,7 +46,7 @@ export default function ListOfProducts() {
                     );
                 })}
             </div>
-            <button onClick={addProductHandler}>Add Product</button>
+            <button onClick={addProductHandler} className="product-button">Add Product</button>
         </div>
     );
 }
