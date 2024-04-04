@@ -51,3 +51,33 @@
   border: 1px solid black;
   margin: 2rem;
 }
+
+/* Update background color in the event of dark mode by user
+ */
+ 
+ @media (prefers-color-scheme: dark) {
+  * {
+    color: white;
+    }
+
+  div {
+    border: 1px solid white;
+  }
+
+  .activity, .sect {
+    border: 1px solid white;
+  }
+  
+  .product-item {
+    border: 1px solid white !important;
+  }
+
+  .product-button {
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+  }
+}
+
+
+
