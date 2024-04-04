@@ -1,5 +1,5 @@
 const questions_06 = [
-    ["1. With which language are styles for React components defined?", ""],
+    ["1. With which language are styles for React components defined?", "CSS"],
     [
         "2. Which important difference between projects with and without React has to be kept in mind when assigning classes to elements?",
         "",
