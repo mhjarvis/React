@@ -16,23 +16,26 @@ export default function Form() {
     }
 
     function testInputs() {
-        if (email.length < 8) {
+        if (email.length < 8 || email.length > 0) {
+            console.log(email.length)
             emailClass = "newRed";
         }
-        if (email.length >= 8) {
+        if (email.length >= 8 || email.length === 0) {
             emailClass = "";
         }
     }
 
-    let emailClass = "";
-    let passwordClass = "";
+    let emailClass;
+    let passwordClass;
 
     return (
         <div>
             <form action="">
-                <label htmlFor="email" className="newRed">Your email</label>
+                <label htmlFor="email" className="newRed">
+                    Your email
+                </label>
                 <input
-                    type="email"
+                    type="text"
                     className={emailClass}
                     id="email"
                     value={email}
@@ -46,6 +49,7 @@ export default function Form() {
                     value={password}
                     onChange={passwordUpdateHandler}
                 />
+                <button onClick={testInputs}>Submit</button>
             </form>
         </div>
     );
