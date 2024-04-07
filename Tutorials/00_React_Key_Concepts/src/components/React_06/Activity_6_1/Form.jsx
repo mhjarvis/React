@@ -9,6 +9,7 @@ export default function Form() {
         setEmail(event.target.value);
         testInputs();
     }
+    
 
     function passwordUpdateHandler(event) {
         setPassword(event.target.value);
