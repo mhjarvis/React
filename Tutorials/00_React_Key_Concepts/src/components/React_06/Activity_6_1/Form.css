@@ -1,4 +1,9 @@
-
-.newRed {
+.red {
     color: red;
+}
+
+.border-red {
+    border: 1px solid red;
+    background-color: rgb(255, 0, 0);
+    opacity: 0.5;
 }
