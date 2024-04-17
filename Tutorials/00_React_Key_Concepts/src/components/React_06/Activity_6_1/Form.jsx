@@ -66,12 +66,13 @@ export default function Form() {
                     value={password}
                     onChange={passwordUpdateHandler}
                 />
-                <button type="button" onClick={validateInput}>Submit</button>
+                <button type="button" onClick={validateInput}>
+                    Submit
+                </button>
             </form>
         </div>
     );
 }
-
 
 /* import { useState } from 'react';
 
